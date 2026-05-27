@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Local Retail Ops Dashboard MVP</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Pilot MVP</p>
+      <h1>Local Retail Ops Dashboard</h1>
+      <p class="sub">For hardware stores, auto parts shops, building supply, and specialty retailers.</p>
+    </div>
+    <div class="actions">
+      <label class="button secondary">Import CSV <input id="csvInput" type="file" accept=".csv" hidden /></label>
+      <button id="resetDemo" class="button">Reset demo data</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="grid kpis" id="kpis"></section>
+
+    <section class="grid two-col">
+      <article class="card">
+        <div class="card-head">
+          <h2>Low-stock watchlist</h2>
+          <span id="lowStockCount" class="badge"></span>
+        </div>
+        <table>
+          <thead><tr><th>SKU</th><th>Item</th><th>On hand</th><th>Reorder point</th><th>Est. days left</th></tr></thead>
+          <tbody id="lowStockRows"></tbody>
+        </table>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h2>Reorder suggestions</h2>
+          <span class="badge amber">Supplier-ready</span>
+        </div>
+        <table>
+          <thead><tr><th>Supplier</th><th>Item</th><th>Suggested qty</th><th>Est. cost</th></tr></thead>
+          <tbody id="reorderRows"></tbody>
+        </table>
+      </article>
+    </section>
+
+    <section class="grid two-col">
+      <article class="card">
+        <div class="card-head">
+          <h2>Slow-moving stock</h2>
+          <span class="badge red">Cash tied up</span>
+        </div>
+        <table>
+          <thead><tr><th>SKU</th><th>Item</th><th>Stock value</th><th>Last sold</th><th>Action</th></tr></thead>
+          <tbody id="slowRows"></tbody>
+        </table>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h2>Margin / price monitor</h2>
+          <span class="badge">Top risks</span>
+        </div>
+        <table>
+          <thead><tr><th>Item</th><th>Margin</th><th>Price</th><th>Note</th></tr></thead>
+          <tbody id="marginRows"></tbody>
+        </table>
+      </article>
+    </section>
+
+    <section class="grid three-col">
+      <article class="card panel">
+        <h2>Sales & customer trends</h2>
+        <div id="trendBars" class="bars"></div>
+      </article>
+      <article class="card panel">
+        <h2>Quote / order follow-up</h2>
+        <ul id="quoteList" class="checklist"></ul>
+      </article>
+      <article class="card panel">
+        <h2>Reviews & staff tasks</h2>
+        <div id="reviewPanel"></div>
+        <ul id="taskList" class="checklist"></ul>
+      </article>
+    </section>
+
+    <section class="card import-help">
+      <h2>CSV import format</h2>
+      <p>Prototype import accepts columns: <code>sku,name,category,stock,reorder_point,cost,price,last_sold,supplier,avg_daily_sales</code>. Try <a href="./data/sample_inventory.csv">sample_inventory.csv</a>.</p>
+    </section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
