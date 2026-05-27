@@ -1,0 +1,6 @@
+sku,name,category,stock,reorder_point,cost,price,last_sold,supplier,avg_daily_sales
+FAST-8X2,8x2 wood screws 200pk,Fasteners,8,30,4.2,8.99,2026-05-25,Nordic Fixings,5.2
+PAINT-WHT10,White interior paint 10L,Paint,12,18,31,58,2026-05-26,ColorPro,2.1
+DRILL-18V,18V cordless drill kit,Tools,3,5,78,119,2026-05-20,ToolSource,0.35
+PIPE-CU15,15mm copper pipe 3m,Plumbing,22,40,7.8,12.5,2026-05-24,BuildSupply,4.4
+HINGE-BRASS,Brass cabinet hinge pair,Hardware,140,25,3.1,5.49,2026-03-01,Nordic Fixings,0.05
